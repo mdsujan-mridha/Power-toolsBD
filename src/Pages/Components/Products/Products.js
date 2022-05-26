@@ -12,13 +12,16 @@ const Products = () => {
         //  console.log(products);
     }  ,[])
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-10 mb-10'>
+        <div>
+            <h1 className='text-center text-6xl font-bold pb-10'>  Our Tools </h1>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-10 mb-10 mt-5'>
             {
                 products.map(product=><Product
                    key={product._id}
                    product={product}
                 ></Product> )
             }
+        </div>
         </div>
     );
 };
