@@ -1,0 +1,51 @@
+[
+    {
+        "_id":"1",
+        "name":"Hydraulic control",
+        "content": "A hydraulic system controls the transmission of energy. It transforms the mechanical energy of a prime motor into fluid energy. It controls the fluid configuration and transforms the fluid energy into mechanical work at specified locations.",
+        "img": "https://i.ibb.co/1sbqTst/Hydraulic-control.jpg",
+        "quantity": "195",
+        "price":"2000 Tk"
+    },
+    {
+        "_id":"2",
+        "name":"Tractor pulley",
+        "content": "Our organization is offering PTO Pulley to our clients. We offer these PTO Pulley at our highly developed production unit by making use of sophisticated machines and high grade quality cast iron, gears & bearing made with a well heated treatment. These are very much used in taking power output from tractor to any external applications.",
+        "img": "https://i.ibb.co/R48qwKd/Tractor-pulley.jpg",
+        "quantity": "290",
+        "price":"2200 Tk"
+    },
+    {
+        "_id":"3",
+        "name":"Brakes",
+        "content": "Simply defined, it's the process of slowing down a vehicle by stepping off the accelerator and downshifting gears instead of pressing on the brake pedal. The braking system on a vehicle is responsible for slowing it down while driving.",
+        "img": "https://i.ibb.co/SrK8dX4/Brakes.jpg",
+        "quantity": "180",
+        "price":"1800 Tk"
+    },
+    {
+        "_id":"4",
+        "name":"Differential unit",
+        "content": "The differential is a system of gears that allows different drive wheels (the wheels to which power is delivered from the engine) on the same axle to rotate at different speeds, such as when the car is turning.",
+        "img": "https://i.ibb.co/vz9ppj5/Differential-unit.jpg",
+        "quantity": "210",
+        "price":"2800 Tk"
+    },
+    {
+        "_id":"5",
+        "name":" Power take off unit ",
+        "content": "A power take-off or power takeoff is one of several methods for taking power from a power source, such as a running engine, and transmitting it to an application such as an attached implement or separate machine.",
+        "img": "https://i.ibb.co/5ct553M/Power-take-off-unit.jpg",
+        "quantity": "150",
+        "price":"2500 Tk"
+    },
+    {
+        "_id":"6",
+        "name":" Transmission-gears ",
+        "content": "Gear transmission has been widely used in mechanical equipment as one of the most important transmission modes. The vibration and noise of gearsets is directly related to the whole characteristics of the transmission system. In order to improve the performance and reduce the noise of gear transmission system, more attention should be paid on the gear dynamics. ",
+        "img": "https://i.ibb.co/3TC3LHF/Transmission-gears.jpg",
+        "quantity": "200",
+        "price":"3000 Tk"
+    }
+   
+]
