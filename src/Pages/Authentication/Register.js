@@ -11,23 +11,23 @@ const Register = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth);
 
 
-const nameRef = useRef();
-const emailRef = useRef();
-const passwordRef = useRef();
+    const nameRef = useRef();
+    const emailRef = useRef();
+    const passwordRef = useRef();
 
-      const handleSignUp = e =>{
-          e.preventDefault()
-          const name = nameRef.current.value;
-          const email = emailRef.current.value;
-          const passsword = passwordRef.current.value;
-          createUserWithEmailAndPassword(email,passsword)
+    const handleSignUp = e => {
+        e.preventDefault()
+        const name = nameRef.current.value;
+        const email = emailRef.current.value;
+        const passsword = passwordRef.current.value;
+        createUserWithEmailAndPassword(email, passsword)
 
 
-      }
-    
+    }
+
 
     return (
         <div className='flex justify-center items-center h-screen'>
@@ -37,9 +37,9 @@ const passwordRef = useRef();
                     <div>
                         <form onSubmit={handleSignUp}>
 
-                            <input ref={nameRef} className='border-2 w-full rounded-md h-12 mt-5' placeholder='Name' type="text" name="name" id="1" required/>
-                            <input  ref={emailRef}className='border-2 w-full rounded-md h-12 mt-5' placeholder='E-mail' type="email" name="email" id="2" required/>
-                            <input ref={passwordRef} className='border-2 w-full rounded-md h-12 mt-5' placeholder='password' type="password" name="password" id="3" required/>
+                            <input ref={nameRef} className='border-2 w-full rounded-md h-12 mt-5' placeholder='Name' type="text" name="name" id="1" required />
+                            <input ref={emailRef} className='border-2 w-full rounded-md h-12 mt-5' placeholder='E-mail' type="email" name="email" id="2" required />
+                            <input ref={passwordRef} className='border-2 w-full rounded-md h-12 mt-5' placeholder='password' type="password" name="password" id="3" required />
                             <input className='btn btn-primary text-white w-full max-w-full text-white-100 font-medium mt-9 border-2' type="submit" value="Signup" />
                             <p className='my-5 text-lg font-semibold'>Already have an account? <Link className='text-primary' to="/login">Login </Link>  </p>
                         </form>

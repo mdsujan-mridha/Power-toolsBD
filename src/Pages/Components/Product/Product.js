@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Product = ({ product }) => {
     const { name, _id, img, content, price, quantity } = product;
@@ -6,6 +7,12 @@ const Product = ({ product }) => {
 
     const [readMore, setReadMore] = useState(true);
     const toggleReadMore = () => { setReadMore(!readMore) };
+
+   const navigate = useNavigate();
+    const purchaseProduct = id => {
+        navigate(`/product/${id}`);
+    }
+
 
     return (
         <div class="card w-96 bg-base-100 shadow-xl">
@@ -32,7 +39,7 @@ const Product = ({ product }) => {
 
                 <p className='text-left text-xl font-semibold'> Price: {price}</p>
                 <div class="card-actions items-center">
-                    <button class="btn btn-primary items-center w-full text-white"> Order Now </button>
+                    <button onClick={() => purchaseProduct(_id) } class="btn btn-primary items-center w-full text-white"> Order Now </button>
                 </div>
             </div>
         </div>
