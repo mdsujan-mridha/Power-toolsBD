@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 const Product = ({ product }) => {
     const { name, _id, img, content, price, quantity } = product;
+  const navigate = useNavigate();
     // console.log(product);
 
     const [readMore, setReadMore] = useState(true);
     const toggleReadMore = () => { setReadMore(!readMore) };
 
-   const navigate = useNavigate();
+
     const purchaseProduct = id => {
         navigate(`/product/${id}`);
     }
