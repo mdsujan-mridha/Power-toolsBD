@@ -34,7 +34,12 @@ const Dashboard = () => {
                     <li className='text-lg font-medium text-primary'> <h3> {userEmail} </h3></li>
                     <li><Link to="/dashboard"> My Order </Link> </li>
                     <li><Link to="review"> My review </Link> </li>
-                    <li> {admin && <Link to="users"> All users </Link>}  </li>
+                       {
+                           admin && <>
+                               <li> <Link to="users"> All users </Link>  </li>
+                               <li> <Link to="addnewtools"> Add new Tools </Link>  </li>
+                           </>
+                       }
                 </ul>
 
             </div>

@@ -14,6 +14,7 @@ import Review from './Pages/Components/Profile/Review';
 import Users from './Pages/Components/Profile/Users';
 import { ToastContainer } from 'react-toastify';
 import RequereAdmin from './Pages/Require/RequereAdmin';
+import AddTools from './Pages/Components/AddTools/AddTools';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path="review" element={<Review></Review>}></Route>
           <Route path='users' element={<Users></Users>}> </Route>
+          <Route path='addnewtools' element={<AddTools></AddTools>}></Route>
         </Route>
 
       </Routes>

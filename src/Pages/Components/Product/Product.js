@@ -31,14 +31,8 @@ const Product = ({ product}) => {
            </span>
               }
                 </p>
-
-
                 <h1 className='text-left text-xl font-semibold'>
                     Available Quantity: {quantity}</h1>
-
-
-
-
                 <p className='text-left text-xl font-semibold'> Price: {price}</p>
                 <div class="card-actions items-center">
                     <button onClick={() => purchaseProduct(_id) } class="btn btn-primary items-center w-full text-white"> Order Now </button>
