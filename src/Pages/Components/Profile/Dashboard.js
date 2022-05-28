@@ -22,7 +22,7 @@ const Dashboard = () => {
               
 
             </div>
-            <div class="drawer-side">
+            <div class="drawer-side mr-5">
                 <label for="my-drawer-2" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-slate-200">
                     <div class="avatar">
@@ -35,6 +35,7 @@ const Dashboard = () => {
                     <li><Link to="/dashboard"> My Order </Link> </li>
                     <li><Link to="review"> Add review </Link> </li>
                     <li><Link to="allreview"> Review </Link> </li>
+                    
                        {
                            admin && <>
                                <li> <Link to="users"> All users </Link>  </li>

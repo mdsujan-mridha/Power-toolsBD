@@ -20,12 +20,11 @@ const Purchase = () => {
     const content = products?.content;
     const price = products?.price;
     const quantity = parseInt( products?.quantity);
- 
+    
     const qutyRef = useRef();
 
     const wantQuantity = parseInt(qutyRef?.current?.value);
     const newQuantity = parseInt(quantity - wantQuantity);
-
     if (wantQuantity <= 30) {
         return <div class="alert alert-warning shadow-lg">
         <div>
@@ -45,11 +44,14 @@ const Purchase = () => {
     const handleBookinSubmit = e => {
         e.preventDefault();
         const wantQuantity = qutyRef.current.value;
+        const price = e.target.price.value;
+        console.log(price);
 
         const booking = {
             productId: _id,
             name: name,
             wantQuantity,
+            price:price,
             customer: user.email,
             customerName: user.displayName,
             phone: e.target.phone.value
@@ -105,6 +107,7 @@ const Purchase = () => {
                                 <input className='border-2 w-full rounded-md h-12 mt-5' value={user.email} type="email" name="email" id="2" disabled />
                                 <input className='border-2 w-full rounded-md h-12 mt-5' type="text" name="phone" id="3" placeholder='Your Phone number' />
                                 <input ref={qutyRef} className='border-2 w-full rounded-md h-12 mt-5' type="text" name="quantity" id="4" placeholder='Enter quantity' />
+                                <input ref={qutyRef} className='border-2 w-full rounded-md h-12 mt-5' value={price} type="text" name="price" id="5" required/>
                                 <input className='btn btn-primary w-full rounded-md h-12 mt-5 text-white' type="submit" value="Pruchase" />
                             </form>
                         </div>
