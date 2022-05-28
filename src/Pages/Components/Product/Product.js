@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Product = ({ product }) => {
+const Product = ({ product}) => {
     const { name, _id, img, content, price, quantity } = product;
   const navigate = useNavigate();
     // console.log(product);
@@ -12,6 +12,7 @@ const Product = ({ product }) => {
 
     const purchaseProduct = id => {
         navigate(`/product/${id}`);
+        
     }
 
 

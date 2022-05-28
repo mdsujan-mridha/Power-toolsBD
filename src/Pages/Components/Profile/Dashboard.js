@@ -1,17 +1,23 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, Outlet } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
 const Dashboard = () => {
-    const [user] = useAuthState(auth);
-    const userName = user.displayName;
-    const userEmail = user.email;
+    const [user,loading] = useAuthState(auth);
+    const userName = user?.displayName;
+    const userEmail = user?.email;
+
+    if(loading){
+        return <button class="btn btn-square loading"></button>
+    }
+
     return (
         <div class="drawer drawer-mobile px-12 mt-10">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col text-center text-2xl font-semibold">
-
-                <h1> My Items  </h1>
+                <Outlet></Outlet>
+              
 
             </div>
             <div class="drawer-side">
@@ -24,6 +30,9 @@ const Dashboard = () => {
                     </div>
                     <li className='text-center text-xl font-bold uppercase'> <h3>{userName}</h3> </li>
                     <li className='text-lg font-medium text-primary'> <h3> {userEmail} </h3></li>
+                    <li><Link to="/dashboard"> My Order </Link> </li>
+                    <li><Link to="review"> My review </Link> </li>
+                    <li><Link to="users"> All users </Link> </li>
                 </ul>
 
             </div>

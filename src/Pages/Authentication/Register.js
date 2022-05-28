@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import UseToken from '../Components/CustomsHooks/UseToken';
 import SocialLogin from './SocialLogin';
 
 const Register = () => {
@@ -12,22 +13,26 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+// update profile 
+const [updateProfile, updating, error2] = useUpdateProfile(auth);
 
+const [token] = UseToken(user);
 
     const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
 
-    const handleSignUp = e => {
+    const handleSignUp = async e => {
         e.preventDefault()
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const passsword = passwordRef.current.value;
-        createUserWithEmailAndPassword(email, passsword)
+       await createUserWithEmailAndPassword(email, passsword)
+       await updateProfile({displayName:name});
 
 
     }
-
+   
 
     return (
         <div className='flex justify-center items-center h-screen'>

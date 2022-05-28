@@ -10,6 +10,7 @@ const Navbar = () => {
 
     const logOut = () =>{
        signOut(auth)
+       localStorage.removeItem('accessToken');
     }
 
     const menuItem = <>
@@ -50,6 +51,9 @@ const Navbar = () => {
                     {/* menu item for large devices */}
                     {menuItem}
                 </ul>
+            </div>
+            <div className="navbar-end"> 
+            <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden"> Open DashBoard </label>
             </div>
 
         </div>
