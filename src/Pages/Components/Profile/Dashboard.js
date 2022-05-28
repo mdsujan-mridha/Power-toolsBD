@@ -2,11 +2,13 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useAdmin from '../CustomsHooks/useAdmin';
 
 const Dashboard = () => {
     const [user,loading] = useAuthState(auth);
     const userName = user?.displayName;
     const userEmail = user?.email;
+    const [admin] = useAdmin(user);
 
     if(loading){
         return <button class="btn btn-square loading"></button>
@@ -32,7 +34,7 @@ const Dashboard = () => {
                     <li className='text-lg font-medium text-primary'> <h3> {userEmail} </h3></li>
                     <li><Link to="/dashboard"> My Order </Link> </li>
                     <li><Link to="review"> My review </Link> </li>
-                    <li><Link to="users"> All users </Link> </li>
+                    <li> {admin && <Link to="users"> All users </Link>}  </li>
                 </ul>
 
             </div>
