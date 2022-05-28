@@ -24,8 +24,8 @@ const Product = ({ product}) => {
             <div class="card-body">
                 <h2 class="card-title my-3 text-2xl font-semibold"> Product: {name} </h2>
                 <p className='text-justify'> 
-                {readMore ? content.slice(0, 80) : content}
-                 {content.length > 90 &&
+                {readMore ? content?.slice(0, 80) : content}
+                 {content?.length > 90 &&
             <span className='text-cyan-500 font-semibold' onClick={toggleReadMore}>
                {readMore ? '...read more' : ' ...show less'};
            </span>

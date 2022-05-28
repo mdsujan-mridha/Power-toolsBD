@@ -10,6 +10,19 @@ const AddTools = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
+        
+         fetch(`http://localhost:5000/products`,{
+             method:'POST',
+             headers:{
+                 'content-type':'application/json'
+             },
+             body:JSON.stringify(data)
+         })
+         .then(res =>res.json())
+          .then(data=>{
+              console.log(data);
+          })
+         
 
     };
 
@@ -26,10 +39,10 @@ const AddTools = () => {
             <form className='grid grid-cols-1' onSubmit={handleSubmit(onSubmit)}>
                 <input className='border-2 w-full rounded-md h-12 mt-5' placeholder='Your email' {...register("email", { required: true, maxLength: 30 })} />
                 <input className='border-2 w-full rounded-md h-12 mt-5' placeholder='Enter product name'  {...register("name", { required: true, maxLength: 30 })} />
-                <textarea className='border-2 w-full rounded-md h-12 mt-5' placeholder='Enter product description' {...register("description")} />
+                <textarea className='border-2 w-full rounded-md h-12 mt-5' placeholder='Enter product description' {...register("content")} />
                 <input className='border-2 w-full rounded-md h-12 mt-5' placeholder='Enter product Price' type="number" {...register("price")} />
                 <input className='border-2 w-full rounded-md h-12 mt-5' placeholder='Enter product quantity' type="number" {...register("quantity")} />
-                <input className='border-2 w-full rounded-md h-12 mt-5' placeholder='photo URL' type="text" {...register("img")} />
+                <input className='border-2 w-full rounded-md h-12 mt-5' placeholder='photo URL' type="text" {...register("img")} required/>
                 <input className='btn btn-primary text-white  max-w-full text-white-100 font-medium mt-9 border-2' type="submit" value="Add product" />
       
             </form>
