@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Power-toolsBD/static/css/main.bf19e77f.css",
+    "main.js": "/Power-toolsBD/static/js/main.20cea50f.js",
+    "static/js/787.3818c7c6.chunk.js": "/Power-toolsBD/static/js/787.3818c7c6.chunk.js",
+    "static/media/logo.svg": "/Power-toolsBD/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Power-toolsBD/index.html",
+    "main.bf19e77f.css.map": "/Power-toolsBD/static/css/main.bf19e77f.css.map",
+    "main.20cea50f.js.map": "/Power-toolsBD/static/js/main.20cea50f.js.map",
+    "787.3818c7c6.chunk.js.map": "/Power-toolsBD/static/js/787.3818c7c6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf19e77f.css",
+    "static/js/main.20cea50f.js"
+  ]
+}
