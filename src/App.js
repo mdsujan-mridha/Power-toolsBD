@@ -21,6 +21,7 @@ import Products from './Pages/Components/Products/Products';
 import BusinessSummary from './Pages/Components/BusinessSummary/BusinessSummary';
 import MyProfile from './Pages/Components/Profile/MyProfile';
 import ManageProduct from './Pages/Components/Profile/ManageProduct';
+import NotFound from './Pages/NotFound/NotFound';
 
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
           <Route path='manageproduct' element={<ManageProduct></ManageProduct>}></Route>
         </Route>
-
+        <Route path='/*' element={<NotFound></NotFound>}></Route>
       </Routes>
 
       <Footer></Footer>
