@@ -8,7 +8,7 @@ const OrderRow = ({order,index}) => {
 
          const procced = window.confirm('Are you sure to delete?');
          if(procced){
-            const url = `http://localhost:5000/booking/${id}`;
+            const url = `https://guarded-bayou-50166.herokuapp.com/booking/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })
@@ -40,7 +40,7 @@ const OrderRow = ({order,index}) => {
                 }
             </td>
             <td>
-            <button onClick={()=>handleDetele(order._id)} class="btn btn-xs btn-error">Tiny</button>
+            <button onClick={()=>handleDetele(order._id)} className="btn btn-xs btn-error">Tiny</button>
             </td>
 
         </tr>

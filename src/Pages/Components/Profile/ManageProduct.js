@@ -10,7 +10,7 @@ const ManageProduct = () => {
 
         const procced = window.confirm("Are your sure?")
         if (procced) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://guarded-bayou-50166.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

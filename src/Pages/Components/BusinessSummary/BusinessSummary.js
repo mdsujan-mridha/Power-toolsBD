@@ -13,22 +13,22 @@ const BusinessSummary = () => {
    
       
             
-            <div class="flex  lg:items-center  lg:justify-around mt-12 pt-10">
+            <div className="flex  lg:items-center  lg:justify-around mt-12 pt-10">
                
                 <div>
-                    <span class="countdown font-mono text-4xl text-purple-500">
+                    <span className="countdown font-mono text-4xl text-purple-500">
                         200+ <FaUser />
                     </span>
                     
                 </div>
                 <div>
-                    <span class="countdown font-mono text-4xl text-purple-500">
+                    <span className="countdown font-mono text-4xl text-purple-500">
                        3000+ < BsTools />
                     </span>
                    
                 </div>
                 <div>
-                    <span class="countdown font-mono text-4xl text-purple-600">
+                    <span className="countdown font-mono text-4xl text-purple-600">
                          
                          10,000+ < MdDeliveryDining/>
                          

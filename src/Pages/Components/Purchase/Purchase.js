@@ -11,7 +11,7 @@ const Purchase = () => {
     const [user, loading] = useAuthState(auth);
     const { productId } = useParams();
 
-    const { data: products, isLoading, refetch } = useQuery('booking', () => fetch(`http://localhost:5000/product/${productId}`)
+    const { data: products, isLoading, refetch } = useQuery('booking', () => fetch(`https://guarded-bayou-50166.herokuapp.com/product/${productId}`)
         .then(res => res.json())
     )
     const _id = products?._id;
@@ -23,7 +23,7 @@ const Purchase = () => {
  
 
     if (isLoading) {
-        return <button class="btn btn-square loading"></button>
+        return <button className="btn btn-square loading"></button>
     }
 
     const handleBookinSubmit = e => {
@@ -43,7 +43,7 @@ const Purchase = () => {
 
         }
 
-        fetch('http://localhost:5000/booking', {
+        fetch('https://guarded-bayou-50166.herokuapp.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -59,19 +59,19 @@ const Purchase = () => {
     }
 
     if (loading) {
-        return <button class="btn loading">loading</button>
+        return <button className="btn loading">loading</button>
     }
 
     return (
         <div className=' flex order-2 justify-evenly mt-10'>
             <div>
-                <div class="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-96 bg-base-100 shadow-xl">
                     <h1 className='text-center text-3xl font-semibold'>  Your choice Item </h1>
-                    <figure class="px-5 pt-5">
+                    <figure className="px-5 pt-5">
                         <img className='w-64 h-52' src={img} />
                     </figure>
-                    <div class="card-body">
-                        <h2 class="card-title my-3 text-2xl font-semibold"> Product: {name} </h2>
+                    <div className="card-body">
+                        <h2 className="card-title my-3 text-2xl font-semibold"> Product: {name} </h2>
                         <p className='text-justify'>
                             {content}
                         </p>
@@ -82,9 +82,9 @@ const Purchase = () => {
                 </div>
             </div>
             <div>
-                <div class="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-96 bg-base-100 shadow-xl">
 
-                    <div class="card-body">
+                    <div className="card-body">
                         <h2 className='text-center mt-5 text-4xl font-semibold'> Invoice </h2>
                         <div>
                             <form onSubmit={handleBookinSubmit}>

@@ -39,19 +39,19 @@ const [token] = UseToken(user);
    let loadingElement;
    if(loading){
        loadingElement=
-       <button class="btn btn-square loading"></button>
+       <button className="btn btn-square loading"></button>
    }
    let errorElement;
    if(error){
     errorElement=
-    <button class="btn loading"> {error?.message} </button>
+    <button className="btn loading"> {error?.message} </button>
    }
 
     return (
         <div className='flex justify-center items-center h-screen'>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="text-center text-4xl my-5 font-bold "> Signup </h2>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="text-center text-4xl my-5 font-bold "> Signup </h2>
                     <div>
                         <form onSubmit={handleSignUp}>
 
@@ -63,8 +63,8 @@ const [token] = UseToken(user);
                             <input className='btn btn-primary text-white w-full max-w-full text-white-100 font-medium mt-9 border-2' type="submit" value="Signup" />
                             <p className='my-5 text-lg font-semibold'>Already have an account? <Link className='text-primary' to="/login">Login </Link>  </p>
                         </form>
-                        <div class="flex flex-col w-full border-opacity-50">
-                            <div class="divider">OR</div>
+                        <div className="flex flex-col w-full border-opacity-50">
+                            <div className="divider">OR</div>
                             <SocialLogin></SocialLogin>
                         </div>
                     </div>

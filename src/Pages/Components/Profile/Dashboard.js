@@ -11,22 +11,22 @@ const Dashboard = () => {
     const [admin] = useAdmin(user);
 
     if(loading){
-        return <button class="btn btn-square loading"></button>
+        return <button className="btn btn-square loading"></button>
     }
 
     return (
-        <div class="drawer drawer-mobile px-12 mt-10">
-            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content flex flex-col text-center text-2xl font-semibold">
+        <div className="drawer drawer-mobile px-12 mt-10">
+            <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content flex flex-col text-center text-2xl font-semibold">
                 <Outlet></Outlet>
               
 
             </div>
-            <div class="drawer-side mr-5">
-                <label for="my-drawer-2" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-80 bg-slate-200">
-                    <div class="avatar">
-                        <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <div className="drawer-side mr-5">
+                <label for="my-drawer-2" className="drawer-overlay"></label>
+                <ul className="menu p-4 overflow-y-auto w-80 bg-slate-200">
+                    <div className="avatar">
+                        <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                             <img src="https://api.lorem.space/image/face?hash=3174" />
                         </div>
                     </div>

@@ -4,7 +4,7 @@ import CustomerReview from './CustomerReview';
 const AllReview = () => {
     const[allReview ,setAllReview] = useState([]);
      useEffect( ()=>{
-         fetch('http://localhost:5000/review')
+         fetch('https://guarded-bayou-50166.herokuapp.com/review')
           .then(res => res.json())
            .then(data => {
                setAllReview(data)

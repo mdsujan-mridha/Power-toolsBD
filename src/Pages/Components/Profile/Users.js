@@ -4,7 +4,7 @@ import UserRow from './UserRow';
 
 const Users = () => {
 
-    const { data: users, isLoading,refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading,refetch } = useQuery('users', () => fetch('https://guarded-bayou-50166.herokuapp.com/users', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -12,7 +12,7 @@ const Users = () => {
 
     }).then(res => res.json()));
     if (isLoading) {
-        return <button class="btn btn-square loading"></button>
+        return <button className="btn btn-square loading"></button>
 
     }
 
@@ -20,8 +20,8 @@ const Users = () => {
         <div>
             <h2 className="text-2xl"> All users {users.length} </h2>
 
-            <div class="overflow-x-auto">
-                <table class="table table-zebra w-full">
+            <div className="overflow-x-auto">
+                <table className="table table-zebra w-full">
 
                     <thead>
                         <tr>

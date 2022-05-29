@@ -20,13 +20,13 @@ const SocialLogin = () => {
     let loadingElement;
     if(loading){
         loadingElement =
-        <button class="btn btn-square loading"></button>
+        <button className="btn btn-square loading"></button>
     }
 
     let erroeElement;
     if(error){
         erroeElement=
-        <button class="btn loading"> {error?.message} </button>
+        <button className="btn loading"> {error?.message} </button>
     }
 
      

@@ -12,7 +12,7 @@ const MyOrder = () => {
     
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/bookings?customer=${user.email}`, {
+            fetch(`https://guarded-bayou-50166.herokuapp.com/bookings?customer=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -37,13 +37,13 @@ const MyOrder = () => {
    
 
     if (loading) {
-        return <button class="btn btn-square loading"></button>
+        return <button className="btn btn-square loading"></button>
     }
     return (
         <div className='mr-10'>
             <h1> My order {orders.length} </h1>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>

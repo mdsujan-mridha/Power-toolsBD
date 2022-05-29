@@ -9,7 +9,7 @@ const stripePromise = loadStripe('pk_test_51L4XDiGUD7cpESBuIIkTbK9TiFtpX62F9GlBO
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/booking/${id}`;
+    const url = `https://guarded-bayou-50166.herokuapp.com/booking/${id}`;
 
     const { data: order, isLoading } = useQuery(['booking', id], () => fetch(url,{
         method: 'GET',

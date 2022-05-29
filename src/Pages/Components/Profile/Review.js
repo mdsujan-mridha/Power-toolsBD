@@ -15,7 +15,7 @@ const Review = () => {
               review: e.target.review.value
           }
          
-         fetch('http://localhost:5000/review',{
+         fetch('https://guarded-bayou-50166.herokuapp.com/review',{
                      method:'POST',
                      headers:{
         
@@ -31,9 +31,9 @@ const Review = () => {
     return (
 
         <div className ='flex justify-center items-center h-screen'>
-        <div class ="card w-96 bg-base-100 shadow-xl">
-            <div class="card-body items-center">
-                <h2 class=" text-center font-bold text-4xl"> Add Review  </h2>       
+        <div className ="card w-96 bg-base-100 shadow-xl">
+            <div className="card-body items-center">
+                <h2 className=" text-center font-bold text-4xl"> Add Review  </h2>       
             <form onSubmit={handleReviewSubmit} className='grid grid-cols-1 w-full'>
                 <input className='border-2 w-full rounded-md h-40 mt-5' type="text" name="review" id="1"  required placeholder='Enter write your review'/>
                 <input className='btn btn-primary text-white  w-full text-white-100 font-medium mt-9 border-2' type="submit" value="add" />

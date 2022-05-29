@@ -11,7 +11,7 @@ const AddTools = () => {
 
     const onSubmit = data => {
         
-         fetch(`http://localhost:5000/products`,{
+         fetch(`https://guarded-bayou-50166.herokuapp.com/products`,{
              method:'POST',
              headers:{
                  'content-type':'application/json'
@@ -29,9 +29,9 @@ const AddTools = () => {
     return (
 
         <div className ='flex justify-center items-center h-screen'>
-        <div class ="card w-96 bg-base-100 shadow-xl">
-            <div class="card-body items-center">
-                <h2 class=" text-center font-bold text-4xl"> Add new tools  </h2>
+        <div className ="card w-96 bg-base-100 shadow-xl">
+            <div className="card-body items-center">
+                <h2 className=" text-center font-bold text-4xl"> Add new tools  </h2>
               
                 <div className='justify-center items-center'>
        

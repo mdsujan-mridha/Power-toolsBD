@@ -8,7 +8,7 @@ const RequereAuth = ({children}) => {
      const location = useLocation();
 
      if(loading){
-         return <button class="btn btn-square loading"></button>
+         return <button className="btn btn-square loading"></button>
      }
    if(!user){
        return <Navigate to="/login" state={{from :location}} replace></Navigate>

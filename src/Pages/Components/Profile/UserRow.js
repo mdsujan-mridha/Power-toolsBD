@@ -5,7 +5,7 @@ import React from 'react';
 const UserRow = ({ user,refetch }) => {
     const { email,role } = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/users/admin/${email}`, {
+        fetch(`https://guarded-bayou-50166.herokuapp.com/users/admin/${email}`, {
             method: 'POST',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const UserRow = ({ user,refetch }) => {
       const procced = window.confirm('Are Your sure?');
       
        if(procced){
-           const url= `http://localhost:5000/user/${id}`;
+           const url= `https://guarded-bayou-50166.herokuapp.com/user/${id}`;
            fetch(url ,{
                method:'DELETE',
                 headers:{
@@ -56,11 +56,11 @@ const UserRow = ({ user,refetch }) => {
             <td> {email} </td>
      
             <td>
-                <button onClick={()=>handleUserDelete(user?._id)} class="btn btn-circle btn-outline">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                <button onClick={()=>handleUserDelete(user?._id)} className="btn btn-circle btn-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
             </td>
-            <td> {role !== 'admin' && <button onClick={makeAdmin} class="btn btn-xs text-primary">Make Admin</button>}
+            <td> {role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs text-primary">Make Admin</button>}
                  </td>
                 
         </tr>

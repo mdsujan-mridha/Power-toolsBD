@@ -5,11 +5,11 @@ import Product from '../Product/Product';
 
 const Products = () => {
     const[products,setProducts] = UseProducts();
-    // const { data: products,isLoading,refetch } = useQuery('availableQuantity', () => fetch("http://localhost:5000/products")
+    // const { data: products,isLoading,refetch } = useQuery('availableQuantity', () => fetch("https://guarded-bayou-50166.herokuapp.com/products")
     //     .then(res => res.json())
     // )
     // if(isLoading){
-    //     return <button class="btn btn-square loading"></button>
+    //     return <button className="btn btn-square loading"></button>
     // }
 
     return (
