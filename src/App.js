@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Shared/Home/Home';
 import Navbar from './Pages/Shared/NavBar/Navbar';
 import Footer from './Pages/Shared/Footer/Footer';
-import Products from './Pages/Components/Products/Products';
 import Login from './Pages/Authentication/Login';
 import Register from './Pages/Authentication/Register';
 import Purchase from './Pages/Components/Purchase/Purchase';
@@ -17,6 +16,10 @@ import RequereAdmin from './Pages/Require/RequereAdmin';
 import AddTools from './Pages/Components/AddTools/AddTools';
 import AllReview from './Pages/Components/Profile/AllReview';
 import Payment from './Pages/Components/Profile/Payment';
+import RequereAuth from './Pages/Require/RequireAuth';
+import Products from './Pages/Components/Products/Products';
+import BusinessSummary from './Pages/Components/BusinessSummary/BusinessSummary';
+
 
 function App() {
   return (
@@ -26,8 +29,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='home' element={<Home></Home>}></Route>
+        <Route path='summary' element={<BusinessSummary></BusinessSummary>}></Route>
+        <Route path='products' element={<RequereAuth>
+          <Products></Products>
+        </RequereAuth>}></Route>
         <Route path='product/:productId' element={<Purchase></Purchase>}></Route>
-        <Route path='products' element={<Products></Products>}></Route>
+         
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='register' element={<Register></Register>}></Route>
         <Route path='allreview' element={<AllReview></AllReview>}></Route>

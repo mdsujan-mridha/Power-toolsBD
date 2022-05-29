@@ -9,8 +9,16 @@ const stripePromise = loadStripe('pk_test_51L4XDiGUD7cpESBuIIkTbK9TiFtpX62F9GlBO
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/booking/${id}`
-    const { data: order, isLoading } = useQuery(['booking', id], () => fetch(url).then(res => res.json()))
+    const url = `http://localhost:5000/booking/${id}`;
+
+    const { data: order, isLoading } = useQuery(['booking', id], () => fetch(url,{
+        method: 'GET',
+        headers: {
+            
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+
+    }).then(res => res.json()))
     if (isLoading) {
         return <button class="btn btn-square loading"></button>
     }
@@ -29,7 +37,7 @@ const Payment = () => {
                 <div class="card-body">
 
                     <Elements stripe={stripePromise}>
-                        <CheckoutForm />
+                        <CheckoutForm order={order}/>
                     </Elements>
 
                 </div>

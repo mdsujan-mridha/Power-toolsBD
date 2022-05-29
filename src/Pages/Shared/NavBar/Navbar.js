@@ -17,6 +17,7 @@ const Navbar = () => {
         <li><Link to="/home"> Home </Link></li>
         <li><Link to="/products"> Tools </Link></li>
         <li><Link to="/allreview"> Reviews </Link></li>
+        <li><Link to="/summary"> Business Summary </Link></li>
         
         <li><Link to="/Contact"> Contact </Link></li>
         
@@ -26,7 +27,7 @@ const Navbar = () => {
             user?
              <>
                <li><Link to="" onClick={logOut}> Logout </Link></li>
-               <li><Link to="/review"> Add Review </Link></li>
+               
                <li><Link to ="dashboard">DashBoard</Link></li>
              
              </>

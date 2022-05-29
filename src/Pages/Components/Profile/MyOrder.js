@@ -1,14 +1,15 @@
-import { signOut } from 'firebase/auth';
+
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import OrderRow from './OrderRow';
 
 const MyOrder = () => {
     const [orders, setOrders] = useState([])
     const [user, loading] = useAuthState(auth);
     const navigate = useNavigate();
-
+    
     useEffect(() => {
         if (user) {
             fetch(`http://localhost:5000/bookings?customer=${user.email}`, {
@@ -29,9 +30,11 @@ const MyOrder = () => {
 
                     setOrders(data)
                 })
-            console.log(orders);
+            // console.log(orders);
         }
     }, [user]);
+
+   
 
     if (loading) {
         return <button class="btn btn-square loading"></button>
@@ -46,7 +49,7 @@ const MyOrder = () => {
                             <th></th>
                             <th> Product </th>
                             <th> Quantity </th>
-                            <th> price </th>  
+                            <th> price </th>
                             <th> Pay </th>
                             <th > Procced </th>
 
@@ -54,29 +57,11 @@ const MyOrder = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) =>
-                                <tr>
-
-                                    <td>{index + 1}</td>
-                                    <td> {order.name} </td>
-                                    <td> {order.quantity} </td>
-                                     <td> {order.price} </td>
-                                    <td>
-                                        {
-                                            (order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}> <button className='btn btn-primary'>Pay </button> </Link>
-                                        }
-                                        {
-                                            (order.price && order.paid) && <span className='text-success'> Paid  </span>
-                                        }
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-circle btn-outline">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                                        </button>
-                                    </td>
-
-                                </tr>
-                            )
+                            orders.map((order, index) =><OrderRow
+                            key={order._id}
+                            order={order}
+                            index={index}
+                            ></OrderRow>)
                         }
                     </tbody>
                 </table>
