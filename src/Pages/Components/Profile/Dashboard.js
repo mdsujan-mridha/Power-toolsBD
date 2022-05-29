@@ -33,6 +33,7 @@ const Dashboard = () => {
                     <li className='text-center text-xl font-bold uppercase'> <h3>{userName}</h3> </li>
                     <li className='text-lg font-medium text-primary'> <h3> {userEmail} </h3></li>
                     <li><Link to="/dashboard"> My Order </Link> </li>
+                    <li><Link to="profile"> My Profile </Link> </li>
                      {
                          !admin &&  <li><Link to="review"> Add review </Link> </li>
                      }

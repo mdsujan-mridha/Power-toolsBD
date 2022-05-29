@@ -19,6 +19,7 @@ import Payment from './Pages/Components/Profile/Payment';
 import RequereAuth from './Pages/Require/RequireAuth';
 import Products from './Pages/Components/Products/Products';
 import BusinessSummary from './Pages/Components/BusinessSummary/BusinessSummary';
+import MyProfile from './Pages/Components/Profile/MyProfile';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           <Route path='addnewtools' element={<AddTools></AddTools>}></Route>
           <Route path='allreview' element={<AllReview></AllReview>}></Route>
           <Route path="review" element={<Review></Review>}></Route>
+          <Route path='profile' element={<MyProfile></MyProfile>}></Route>
         </Route>
 
       </Routes>

@@ -13,7 +13,7 @@ const BusinessSummary = () => {
    
       
             
-            <div class="flex items-center justify-around mt-12 pt-10">
+            <div class="flex  lg:items-center  lg:justify-around mt-12 pt-10">
                
                 <div>
                     <span class="countdown font-mono text-4xl text-purple-500">
