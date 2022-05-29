@@ -37,7 +37,7 @@ const Dashboard = () => {
                      { 
                          !admin && <> 
                           <li><Link to="review"> Add review </Link> </li>
-                         <li><Link to="/dashboard"> My Order </Link> </li>
+                         <li><Link to=""> My Order </Link> </li>
                          </>
                      }
                     <li><Link to="allreview"> Review </Link> </li>
@@ -45,7 +45,7 @@ const Dashboard = () => {
                        {
                            admin && <>
                                  
-                                 <li><Link to="/dashboard"> Manage All Orders </Link> </li>
+                                 <li><Link to="manageallorders"> Manage All Orders </Link> </li>
                                  <li><Link to="manageproduct"> Manage All products </Link> </li>
                                <li> <Link to="users"> Make admin </Link>  </li>
                                <li> <Link to="addnewtools"> Add new Tools </Link> </li>

@@ -1,7 +1,8 @@
 
 
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import auth from '../../../firebase.init';
@@ -10,6 +11,9 @@ const Purchase = () => {
 
     const [user, loading] = useAuthState(auth);
     const { productId } = useParams();
+    const [newQuantity,setNewQuantiyt] = useState('');
+
+     
 
     const { data: products, isLoading, refetch } = useQuery('booking', () => fetch(`https://guarded-bayou-50166.herokuapp.com/product/${productId}`)
         .then(res => res.json())
@@ -20,7 +24,8 @@ const Purchase = () => {
     const content = products?.content;
     const price = products?.price;
     const quantity = parseInt( products?.quantity);
- 
+    const availableQuantiyt = parseInt(quantity - newQuantity);
+  
 
     if (isLoading) {
         return <button className="btn btn-square loading"></button>
@@ -29,9 +34,14 @@ const Purchase = () => {
     const handleBookinSubmit = e => {
         e.preventDefault();
         const wantQuantity= e.target.quantity.value;
+         setNewQuantiyt(wantQuantity);
         const price = e.target.price.value;
-       
-
+        if(wantQuantity < 30 || wantQuantity  === 0) {
+             
+             alert('Make sure quantity more then 30')
+        }
+        else{
+            
         const booking = {
             productId: _id,
             name: name,
@@ -53,11 +63,10 @@ const Purchase = () => {
             .then(res => res.json())
             .then(data => {
                 refetch();
-                console.log(data);
-
+                // console.log(data);
             })
+        }
     }
-
     if (loading) {
         return <button className="btn loading">loading</button>
     }
@@ -76,7 +85,7 @@ const Purchase = () => {
                             {content}
                         </p>
                         <h1 className='text-left text-xl font-semibold'>
-                            Available Quantity: {quantity}</h1>
+                            Available Quantity: {availableQuantiyt}</h1>
                         <p className='text-left text-xl font-semibold'> Price: {price}</p>
                     </div>
                 </div>

@@ -18,10 +18,8 @@ const Navbar = () => {
         <li><Link to="/products"> Tools </Link></li>
         <li><Link to="/allreview"> Reviews </Link></li>
         <li><Link to="/summary"> Business Summary </Link></li>
-        
         <li><Link to="/Contact"> Contact </Link></li>
-        
-        <li><Link to="/Blogs"> Blogs </Link></li>
+        <li><Link to="/blog"> Blogs </Link></li>
       
         {
             user?

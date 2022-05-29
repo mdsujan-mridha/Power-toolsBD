@@ -22,6 +22,8 @@ import BusinessSummary from './Pages/Components/BusinessSummary/BusinessSummary'
 import MyProfile from './Pages/Components/Profile/MyProfile';
 import ManageProduct from './Pages/Components/Profile/ManageProduct';
 import NotFound from './Pages/NotFound/NotFound';
+import ManageAllOrders from './Pages/Components/Profile/ManageAllOrders';
+import Blog from './Pages/Components/Blog/Blog';
 
 
 function App() {
@@ -50,8 +52,10 @@ function App() {
           <Route path='allreview' element={<AllReview></AllReview>}></Route>
           <Route path="review" element={<Review></Review>}></Route>
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='manageallorders' element={<ManageAllOrders></ManageAllOrders>}></Route>
           <Route path='manageproduct' element={<ManageProduct></ManageProduct>}></Route>
         </Route>
+        <Route path='blog' element={<Blog></Blog>}></Route>
         <Route path='/*' element={<NotFound></NotFound>}></Route>
       </Routes>
 
